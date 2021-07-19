@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
-import combinedReducer from "./reducers";
+import combinedReducer from "./redux/products/index";
 import thunk from "redux-thunk";
 const composeEnchanser = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

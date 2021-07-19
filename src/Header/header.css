@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  z-index: 1000;
+  background-color: #f8f9fa;
+  width: 81%;
+  margin-left: 340px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 70px;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2%;
+}
+
+.header__select {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

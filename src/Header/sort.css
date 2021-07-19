@@ -1,0 +1,32 @@
+.nav__sort {
+  background-color: #fff;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+  gap: 5px;
+  width: 100%;
+  padding-top: 1%;
+  border-bottom: 2px solid #dbe0f3;
+}
+
+.sort {
+  border: solid white;
+  color: #aba7a7;
+  font-size: 100%;
+}
+
+.sort__item {
+  border: solid white;
+  color: #000;
+  font-size: 14px;
+  background-color: #edf2fb;
+}
+
+.sort__item:hover {
+  background-color: #a8a4a4;
+}
+
+.sort:focus {
+  outline: none;
+}
