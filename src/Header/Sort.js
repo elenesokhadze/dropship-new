@@ -13,7 +13,7 @@ const Sort = () => {
   return (
     <div className="nav__sort">
       <select className="sort" onChange={handleSort}>
-        <option className="sort__item" value="def">
+        <option className="sort__item" value="sort">
           Sort By: New Arrivals
         </option>
         <option className="sort__item" value="asc">
@@ -22,10 +22,10 @@ const Sort = () => {
         <option className="sort__item" value="desc">
           Price: Low to High
         </option>
-        <option className="sort__item" value="alpasc">
+        <option className="sort__item" value="alphAsc">
           Alphabet: A-Z
         </option>
-        <option className="sort__item" value="alpdesc">
+        <option className="sort__item" value="alphDesc">
           Alphabet: Z-A
         </option>
       </select>

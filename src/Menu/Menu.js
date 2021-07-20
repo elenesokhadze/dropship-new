@@ -15,48 +15,48 @@ const Menu = () => {
     <aside className="menu">
       <ul className="menu__nav">
         <Link to="/dropship">
-          <li>
+          <li className="menu__item">
             <img src={first} alt=""></img>
             <hr />
           </li>
         </Link>
         <Link to="/user">
-          <li>
+          <li className="menu__item menu__item--circle">
             <img src={second} alt=""></img>
           </li>
         </Link>
         <Link to="/dashboard">
-          <li>
+          <li className="menu__item">
             <img src={third} alt=""></img>
           </li>{" "}
         </Link>
         <Link to="/catalog">
-          <li>
+          <li className="menu__item">
             <img src={fourth} alt=""></img>
           </li>
         </Link>
         <Link to="/inventory">
-          <li>
+          <li className="menu__item">
             <img src={fifth} alt=""></img>
           </li>{" "}
         </Link>
         <Link to="/cart">
-          <li>
+          <li className="menu__item">
             <img src={sixth} alt=""></img>
           </li>
         </Link>
         <Link to="/orders">
-          <li>
+          <li className="menu__item">
             <img src={seventh} alt=""></img>
           </li>{" "}
         </Link>
         <Link to="/transactions">
-          <li>
+          <li className="menu__item">
             <img src={eighth} alt=""></img>
           </li>
         </Link>
         <Link to="/store">
-          <li>
+          <li className="menu__item">
             <img src={ninth} alt=""></img>
           </li>{" "}
         </Link>

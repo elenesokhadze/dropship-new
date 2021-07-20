@@ -32,7 +32,6 @@ function App() {
           <Route path="/catalog">
             <Main />
           </Route>
-
           <Route path="/inventory">
             <p>Elene</p>
           </Route>

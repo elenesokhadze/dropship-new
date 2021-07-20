@@ -24,3 +24,16 @@
   margin: 0;
   padding-top: 10px;
 }
+
+.menu__item img:hover {
+  color: #64c7d0;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.menu__item--circle img {
+  border-radius: 50%;
+}
