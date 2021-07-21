@@ -22,7 +22,6 @@ const Product = ({ title, price, image, product }) => {
         className="radio"
         onClick={(e) => e.stopPropagation()}
       />
-
       <div className="catalog__image">
         <img src={image} alt="" />
       </div>

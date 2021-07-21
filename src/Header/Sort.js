@@ -1,6 +1,7 @@
 import "./sort.css";
 import { sortProducts } from "../redux/products/ProductActions";
 import { useDispatch } from "react-redux";
+import SortIcon from "@material-ui/icons/Sort";
 
 const Sort = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const Sort = () => {
   };
   return (
     <div className="nav__sort">
+      <SortIcon className="nav__icon" fontSize="small" />
       <select className="sort" onChange={handleSort}>
         <option className="sort__item" value="sort">
           Sort By: New Arrivals

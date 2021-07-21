@@ -1,13 +1,7 @@
 import "./menu.css";
-import first from "../assets/first.png";
-import second from "../assets/second.jpg";
-import third from "../assets/third.png";
-import fourth from "../assets/fourth.png";
-import fifth from "../assets/fifth.png";
-import sixth from "../assets/sixth.png";
-import seventh from "../assets/seventh.png";
-import eighth from "../assets/eighth.png";
-import ninth from "../assets/ninth.png";
+import logo from "../assets/logo.png";
+import user from "../assets/user.jpg";
+
 import { Link } from "react-router-dom";
 
 const Menu = () => {
@@ -16,48 +10,48 @@ const Menu = () => {
       <ul className="menu__nav">
         <Link to="/dropship">
           <li className="menu__item">
-            <img src={first} alt=""></img>
-            <hr />
+            <img className="menu__logo" src={logo} alt=""></img>
+            {/* <hr /> */}
           </li>
         </Link>
         <Link to="/user">
           <li className="menu__item menu__item--circle">
-            <img src={second} alt=""></img>
+            <img className="user__image" src={user} alt=""></img>
           </li>
         </Link>
         <Link to="/dashboard">
           <li className="menu__item">
-            <img src={third} alt=""></img>
+            <i class="fas fa-tachometer-alt"></i>
           </li>{" "}
         </Link>
         <Link to="/catalog">
           <li className="menu__item">
-            <img src={fourth} alt=""></img>
+            <i class="fas fa-list-ul"></i>
           </li>
         </Link>
         <Link to="/inventory">
           <li className="menu__item">
-            <img src={fifth} alt=""></img>
+            <i class="fas fa-box"></i>
           </li>{" "}
         </Link>
         <Link to="/cart">
           <li className="menu__item">
-            <img src={sixth} alt=""></img>
+            <i class="fas fa-shopping-cart"></i>
           </li>
         </Link>
         <Link to="/orders">
           <li className="menu__item">
-            <img src={seventh} alt=""></img>
+            <i class="fas fa-clipboard-check"></i>
           </li>{" "}
         </Link>
         <Link to="/transactions">
           <li className="menu__item">
-            <img src={eighth} alt=""></img>
+            <i class="fas fa-exchange-alt"></i>
           </li>
         </Link>
         <Link to="/store">
           <li className="menu__item">
-            <img src={ninth} alt=""></img>
+            <i class="fas fa-clipboard-list"></i>
           </li>{" "}
         </Link>
       </ul>

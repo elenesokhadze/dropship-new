@@ -3,7 +3,7 @@
   height: 35px;
   display: flex;
   align-items: center;
-  padding-left: 2%;
+  padding-left: 4%;
   gap: 5px;
   width: 100%;
   padding-top: 1%;
@@ -29,4 +29,8 @@
 
 .sort:focus {
   outline: none;
+}
+
+.nav__icon {
+  color: #aba7a7;
 }

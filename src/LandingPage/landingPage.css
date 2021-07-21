@@ -44,6 +44,7 @@
   cursor: pointer;
   box-sizing: border-box;
   text-decoration: none;
+  font-size: 16px !important;
 }
 .btn-signup:hover {
   border-radius: 4px;
@@ -58,9 +59,8 @@
 .banner__wrapper {
   position: absolute;
   min-width: 900px;
-  top: calc(50%);
   width: 955px;
-  top: calc(50% - 250px);
+  top: calc(50% - 150px);
   left: calc(50% - 497.5px);
 }
 .content__wrapper {
@@ -73,7 +73,7 @@
   font-weight: 400;
   font-size: 36px;
   color: #fff;
-  gap: 30px;
+  gap: 10px;
 }
 .content__wrapper img {
   width: 143px;
