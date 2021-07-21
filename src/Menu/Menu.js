@@ -21,37 +21,37 @@ const Menu = () => {
         </Link>
         <Link to="/dashboard">
           <li className="menu__item">
-            <i class="fas fa-tachometer-alt"></i>
+            <i className="fas fa-tachometer-alt"></i>
           </li>{" "}
         </Link>
         <Link to="/catalog">
           <li className="menu__item">
-            <i class="fas fa-list-ul"></i>
+            <i className="fas fa-list-ul"></i>
           </li>
         </Link>
         <Link to="/inventory">
           <li className="menu__item">
-            <i class="fas fa-box"></i>
+            <i className="fas fa-box"></i>
           </li>{" "}
         </Link>
         <Link to="/cart">
           <li className="menu__item">
-            <i class="fas fa-shopping-cart"></i>
+            <i className="fas fa-shopping-cart"></i>
           </li>
         </Link>
         <Link to="/orders">
           <li className="menu__item">
-            <i class="fas fa-clipboard-check"></i>
+            <i className="fas fa-clipboard-check"></i>
           </li>{" "}
         </Link>
         <Link to="/transactions">
           <li className="menu__item">
-            <i class="fas fa-exchange-alt"></i>
+            <i className="fas fa-exchange-alt"></i>
           </li>
         </Link>
         <Link to="/store">
           <li className="menu__item">
-            <i class="fas fa-clipboard-list"></i>
+            <i className="fas fa-clipboard-list"></i>
           </li>{" "}
         </Link>
       </ul>

@@ -1,8 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font: normal 14px Arial, Verdana, Helvetica, sans-serif;
-}
+/* File: font.css */
 @font-face {
   font-family: "Gilroy";
   src: local("Gilroy-Bold"),
@@ -11,12 +7,4 @@ body {
     url("./fonts/Gilroy-Light.ttf") format("Gilroy-Light"),
     url("./fonts/Gilroy-Medium.ttf") format("Gilroy-Medium"),
     url("./fonts/Gilroy-Regular.ttf") format("Gilroy-Regular");
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Gilroy-Bold" !important;
 }
