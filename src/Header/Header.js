@@ -20,14 +20,18 @@ const Header = ({ checkedProducts, clearAll, selectAll }) => {
               selected {checkedProducts.length} out of {products.length}{" "}
               products
             </div>
-            <Button
-              className="clear"
-              variant="contained"
-              color="primary"
-              onClick={clearAll}
-            >
-              CLEAR ALL{" "}
-            </Button>
+            {checkedProducts.length > 0 ? (
+              <Button
+                className="clear"
+                variant="contained"
+                color="primary"
+                onClick={clearAll}
+              >
+                CLEAR ALL{" "}
+              </Button>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <Search />
