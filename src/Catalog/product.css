@@ -11,8 +11,8 @@
 
 .catalog__item {
   flex: 1 290px;
-  max-width: 310px;
-  height: 440px;
+  max-width: 330px;
+  height: 480px;
   border: 2px solid #ecedf5;
   border-radius: 8px;
   background-color: #fff;
@@ -23,22 +23,23 @@
   gap: 10px;
   z-index: 2;
   position: "relative";
+  box-sizing: content-box;
 }
 
 .catalog__item:hover {
   border: 2px solid #61d5df;
 }
 .catalog__image {
-  height: 288px;
+  height: 320px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 33px;
+  padding-bottom: 10px;
 }
 
 .catalog__image img {
-  height: 288px;
+  height: 320px;
   width: 292px;
 }
 .catalog__title {
@@ -88,13 +89,7 @@
 }
 
 .catalog__hover {
-  position: absolute;
-  width: 310px;
-}
-
-.hover__wrapper {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   width: 100%;
 }
 
@@ -128,7 +123,7 @@
 }
 
 .checkbox__container input:checked ~ .checkmark {
-  background-color: #61d5df;
+  background-color: #2196f3;
 }
 
 .checkmark:after {
@@ -160,4 +155,9 @@
 
 .catalog__item--active {
   border: 2px solid #61d5df;
+}
+
+.catalog__button {
+  position: absolute !important;
+  margin-left: 150px !important;
 }

@@ -9,7 +9,7 @@ const Header = ({ checkedProducts, clearAll, selectAll }) => {
 
   return (
     <header className="header">
-      <div className="container">
+      <div className="header__container">
         <div className="header__nav">
           <div className="header__select">
             <Button variant="contained" color="primary" onClick={selectAll}>
