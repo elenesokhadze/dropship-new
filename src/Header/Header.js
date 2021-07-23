@@ -27,7 +27,7 @@ const Header = ({ checkedProducts, clearAll, selectAll }) => {
                 color="primary"
                 onClick={clearAll}
               >
-                CLEAR ALL{" "}
+                CLEAR SELECTED{" "}
               </Button>
             ) : (
               ""
