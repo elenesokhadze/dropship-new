@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { getProducts } from "../redux/products/ProductActions";
 import { useEffect } from "react";
 
-const Catalog = () => {
+const Catalog = ({ checkedProducts, checkboxChanged }) => {
   const products = useSelector((state) => state.product.products);
   const dispatch = useDispatch();
 
@@ -23,6 +23,8 @@ const Catalog = () => {
           price={product.price}
           image={product.imageUrl}
           product={product}
+          checkedProducts={checkedProducts}
+          checkboxChanged={checkboxChanged}
         />
       ))}
     </section>
