@@ -1,9 +1,15 @@
 import "./product.css";
-
 import { useState } from "react";
 import Modal from "./Modal.js";
 
-const Product = ({ title, price, image, product }) => {
+const Product = ({
+  title,
+  price,
+  image,
+  product,
+  checkedProducts,
+  checkboxChanged,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = (event) => {
@@ -17,12 +23,17 @@ const Product = ({ title, price, image, product }) => {
 
   return (
     <div className="catalog__item" onClick={onOpen}>
-      <input
-        type="checkbox"
-        className="radio"
-        onClick={(e) => e.stopPropagation()}
-      />
-      <label></label>
+      <div className="round">
+        <input
+          onClick={(e) => e.stopPropagation()}
+          type="checkbox"
+          className="radio"
+          checked={checkedProducts.includes(product)}
+          onChange={() => checkboxChanged(product)}
+        />
+        <label for="checkbox"></label>
+      </div>
+
       <div className="catalog__image">
         <img src={image} alt="" />
       </div>

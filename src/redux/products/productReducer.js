@@ -1,5 +1,5 @@
 import {
-  GET_PRODUCTS,
+  Fetch_Products,
   SEARCH_PRODUCTS,
   SORT_PRODUCTS,
 } from "./ProductActionTypes";
@@ -34,7 +34,7 @@ const searchProducts = (search, data) => {
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_PRODUCTS:
+    case Fetch_Products:
       return {
         ...state,
         products: action.payload.productData,

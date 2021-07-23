@@ -34,3 +34,6 @@
 .header__input input:focus {
   outline: none;
 }
+.header__FAQ {
+  cursor: pointer;
+}

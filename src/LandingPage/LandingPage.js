@@ -1,6 +1,5 @@
 import "./landingPage.css";
 import { Link } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
 
 const LandingPage = () => {
   return (
@@ -32,12 +31,17 @@ const LandingPage = () => {
               LOGIN
             </button>
           </Link>
-          <SocialIcon
-            network="facebook"
-            fgColor="white"
-            bgColor="#272c40"
-            className="btn-facebook"
-          />
+          <div className="landingPage__social">
+            <a
+              style={{ display: "table-cell" }}
+              href="https://www.facebook.com/365Dropship"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
 

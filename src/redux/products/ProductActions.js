@@ -1,6 +1,6 @@
 import ProductAPI from "../products/ProductAPI";
 import {
-  GET_PRODUCTS,
+  Fetch_Products,
   SEARCH_PRODUCTS,
   SORT_PRODUCTS,
 } from "./ProductActionTypes";
@@ -10,7 +10,7 @@ export const getProducts = () => async (dispatch) => {
   const products = await productApi.get();
 
   dispatch({
-    type: GET_PRODUCTS,
+    type: Fetch_Products,
     payload: {
       productData: products.data.data,
     },
