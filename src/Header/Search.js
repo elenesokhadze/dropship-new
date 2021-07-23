@@ -27,7 +27,7 @@ const Search = () => {
           onChange={(e) => setInput(e.target.value)}
         />
         <button className="searchButton">
-          <SearchIcon />
+          <SearchIcon className="searchIcon" />
         </button>
       </form>
 
@@ -35,7 +35,7 @@ const Search = () => {
         ADD TO INVENTORY
       </Button>
       <div className="header__FAQ">
-        <HelpOutlineIcon />
+        <HelpOutlineIcon className="FAQ" />
       </div>
     </div>
   );
