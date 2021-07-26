@@ -10,15 +10,24 @@
   border-bottom: 2px solid #dbe0f3;
 }
 
-.sort {
-  border: solid white;
+#sort {
+  font-family: Gilroy-regular;
   color: #aba7a7;
-  font-size: 100%;
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 400;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* Remove default arrow */
+  width: 180px;
+  padding: 20px;
 }
 
-.sort__item {
+/* .sort__item {
   border: solid white;
   color: #000;
   background-color: #edf2fb;
@@ -26,12 +35,24 @@
 
 .sort__item:hover {
   background-color: #a8a4a4;
-}
-
-.sort:focus {
-  outline: none;
-}
+} */
 
 .nav__icon {
   color: #aba7a7;
+}
+
+.fa-sort {
+  color: #aba7a7 !important;
+}
+
+.sort__item {
+  background-color: #edf2fb !important;
+  color: #333;
+  width: 500px;
+  border: 2px solid red !important;
+}
+
+#sort * {
+  border-radius: 15px;
+  background-color: red;
 }

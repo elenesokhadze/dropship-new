@@ -2,6 +2,7 @@ import "./sort.css";
 import { sortProducts } from "../redux/products/ProductActions";
 import { useDispatch } from "react-redux";
 import SortIcon from "@material-ui/icons/Sort";
+// import NativeSelects from "./Select.js";
 
 const Sort = () => {
   const dispatch = useDispatch();
@@ -11,10 +12,11 @@ const Sort = () => {
     e.preventDefault();
     dispatch(sortProducts(e.target.value));
   };
+
   return (
     <div className="nav__sort">
       <SortIcon className="nav__icon" fontSize="small" />
-      <select className="sort" onChange={handleSort}>
+      <select id="sort" onChange={handleSort}>
         <option className="sort__item" value="sort">
           Sort By: New Arrivals
         </option>
@@ -31,6 +33,8 @@ const Sort = () => {
           Alphabet: Z-A
         </option>
       </select>
+      <i className="fas fa-sort"></i>
+      {/* <NativeSelects /> */}
     </div>
   );
 };

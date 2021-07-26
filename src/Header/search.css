@@ -35,8 +35,9 @@
   outline: none;
 }
 
-.header__FAQ {
+.FAQ__wrapper {
   cursor: pointer;
+  margin-right: 120px;
 }
 
 .FAQ {
@@ -53,7 +54,6 @@
   font-weight: bolder;
   outline: 0;
   cursor: pointer;
-  margin-right: 120px;
 }
 
 .FAQ:hover {

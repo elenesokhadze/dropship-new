@@ -2,31 +2,36 @@ import "./product.css";
 import { useState } from "react";
 import Modal from "./Modal.js";
 import Button from "@material-ui/core/Button";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { selectOne } from "../redux/products/ProductActions";
+import { removeOne } from "../redux/products/ProductActions";
 
-const Product = ({
-  title,
-  price,
-  image,
-  product,
-  checkedProducts,
-  checkboxChanged,
-}) => {
+const Product = ({ title, price, image, product, id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({ opacity: 0, display: "none" });
 
+  const dispatch = useDispatch();
+  const selectedProducts = useSelector(
+    (state) => state.product.selectedProducts
+  );
+
+  const selectProductHandler = () => {
+    if (selectedProducts.includes(id)) {
+      dispatch(removeOne(id));
+    } else dispatch(selectOne(id));
+  };
   const onClose = (event) => {
     event.stopPropagation();
     setIsOpen(false);
   };
-
   const onOpen = () => {
     setIsOpen(true);
   };
-
   return (
     <div
       className={`catalog__item
-    ${checkedProducts.includes(product) ? "catalog__item--active" : ""}`}
+    ${selectedProducts.includes(id) ? "catalog__item--active" : ""}`}
       onMouseEnter={(e) => {
         setStyle({ opacity: 1, display: "block" });
       }}
@@ -36,7 +41,7 @@ const Product = ({
     >
       <div
         className={`catalog__hover 
-        ${checkedProducts.includes(product) ? "catalog__hover--active" : ""}`}
+        ${selectedProducts.includes(id) ? "catalog__hover--active" : ""}`}
       >
         <div className="hover__wrapper">
           <label className="checkbox__container">
@@ -44,8 +49,8 @@ const Product = ({
               onClick={(e) => e.stopPropagation()}
               type="checkbox"
               className="checkbox"
-              checked={checkedProducts.includes(product)}
-              onChange={() => checkboxChanged(product)}
+              checked={selectedProducts.includes(id)}
+              onChange={selectProductHandler}
             />
             <span className="checkmark"></span>
           </label>

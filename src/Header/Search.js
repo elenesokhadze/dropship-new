@@ -34,7 +34,7 @@ const Search = () => {
       <Button variant="contained" color="primary">
         ADD TO INVENTORY
       </Button>
-      <div className="header__FAQ">
+      <div className="FAQ__wrapper">
         <HelpOutlineIcon className="FAQ" />
       </div>
     </div>
