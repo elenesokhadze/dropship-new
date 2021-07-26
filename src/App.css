@@ -21,3 +21,7 @@ h4,
 h5 {
   font-family: "Gilroy-Bold" !important;
 }
+
+*:focus {
+  outline: none;
+}

@@ -39,7 +39,7 @@ const LandingPage = () => {
               rel="noreferrer"
             >
               {" "}
-              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i className="fa fa-facebook" aria-hidden="true"></i>
             </a>
           </div>
         </div>

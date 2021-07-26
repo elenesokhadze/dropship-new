@@ -39,7 +39,7 @@ const Product = ({
         ${checkedProducts.includes(product) ? "catalog__hover--active" : ""}`}
       >
         <div className="hover__wrapper">
-          <label class="checkbox__container">
+          <label className="checkbox__container">
             <input
               onClick={(e) => e.stopPropagation()}
               type="checkbox"
@@ -47,7 +47,7 @@ const Product = ({
               checked={checkedProducts.includes(product)}
               onChange={() => checkboxChanged(product)}
             />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
           </label>
           <Button
             variant="contained"
