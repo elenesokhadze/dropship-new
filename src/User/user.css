@@ -1,0 +1,23 @@
+.user {
+  display: flex;
+  width: 97%;
+  margin-left: 3%;
+  /* justify-content: space-between;
+  align-items: center; */
+}
+
+.user__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 17px 0 17px;
+  border-bottom: 2px solid #dde3ee;
+  height: 74px;
+}
+
+.user__heading--right {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+}

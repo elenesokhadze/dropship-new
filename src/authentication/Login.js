@@ -1,55 +1,3 @@
-// import React, { useState, useEffect, useCallback } from "react";
-// import "./login.css";
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const performLogIn = (e) => {
-//     e.preventDefault();
-//     login(email, password)
-//       .then((res) => {
-//         LoggedIn();
-//       })
-//       .catch((error) => {
-//         alert("email or password is incorrect!!!");
-//       });
-//   };
-
-//   useEffect(() => {
-//     const token = localStorage.getItem("token");
-//     if (token) {
-//       LoggedIn();
-//     }
-//   }, [LoggedIn]);
-
-//   return (
-//     <form className="Login" onSubmit={performLogIn}>
-//       <div>
-//         <input
-//           type="email"
-//           name="email"
-//           placeholder="email"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="password"
-//           name="password"
-//           placeholder="Password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//       </div>
-//       <div>
-//         <input type="submit" value="Log In" className="sign-up-btn" />
-//       </div>
-//     </form>
-//   );
-// };
-// export default Login;
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -78,9 +26,6 @@ function LoginForm() {
     password: Yup.string().required("Required"),
   });
 
-  const onSubmit = (values) => {
-    console.log("Form data", values);
-  };
   const performLogIn = (values) => {
     login(values.email, values.password)
       .then((res) => {

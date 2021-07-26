@@ -2,9 +2,10 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Main/Main";
 import LandingPage from "./LandingPage/LandingPage";
-import LoginModal from "./authentication/loginModal";
-import RegisterModal from "./authentication/RegisterModal";
-import Logout from "./authentication/Logout";
+import Login from "./authentication/Login";
+import Register from "./authentication/Register";
+import User from "./User/User";
+import Menu from "./Menu/Menu";
 
 function App() {
   return (
@@ -12,13 +13,14 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/login">
-            <LoginModal />
+            <Login />
           </Route>
           <Route path="/dropship">
             <p>Elene</p>
           </Route>
           <Route path="/user">
-            <Logout />{" "}
+            <Menu />
+            <User />
           </Route>
           <Route exact path="/cart">
             <p>Elene</p>
@@ -27,12 +29,12 @@ function App() {
             <p>Elene</p>
           </Route>
           <Route exact path="/register">
-            <RegisterModal />
+            <Register />
           </Route>
           <Route path="/dashboard">
             <p>Elene</p>
           </Route>
-          <Route path="/catalog">
+          <Route path="/catalog/:param?">
             <Main />
           </Route>
           <Route path="/inventory">
@@ -50,7 +52,6 @@ function App() {
           <Route path="/store">
             <p>Elene</p>
           </Route>
-
           <Route exact path="/">
             <LandingPage />
           </Route>
