@@ -1,0 +1,117 @@
+/* .Register {
+  margin: 20px 40px;
+}
+.Register div {
+  padding: 10px;
+}
+.Register div input {
+  border-color: #61d5df;
+  border-radius: 5px;
+  padding: 10px;
+} */
+
+/* .App {
+  display: flex;
+  justify-content: center;
+} */
+
+.form__label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+  /* justify-content: flex-start; */
+}
+
+/* .form__control input + label {
+  font-weight: bold;
+  display: inline-flex;
+  margin-right: 20px;
+} */
+
+.form__input {
+  width: 280px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  /* color: #555; */
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 30px;
+  /* margin-bottom: 20px; */
+}
+
+.form__control {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left !important;
+}
+
+.error {
+  color: red;
+}
+
+.form__wrapper {
+  background-image: url("../assets/auth-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #98a3c7;
+  opacity: 0.92 !important;
+  z-index: 1;
+}
+
+.form__dialog {
+  width: min(413px, 95%);
+  height: 576px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 8px;
+  padding: 34px 40px;
+  z-index: 2;
+  box-shadow: 0 0 12px #6b6b6b;
+}
+.form__header {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #171717;
+  text-transform: capitalize;
+}
+
+.form__logo img {
+  width: 51px;
+  height: 30px;
+}
+
+.register__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
