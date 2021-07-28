@@ -1,115 +1,27 @@
-// import React, { useState } from "react";
-
-// import { Button } from "@material-ui/core";
-
-// const Register = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [firstName, setFirstName] = useState("");
-//   const [lastName, setLastName] = useState("");
-//   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-
-//   const history = useHistory();
-
-//   const performRegister = (e) => {
-//     e.preventDefault();
-//     register(firstName, lastName, email, password, passwordConfirmation)
-//       .then((res) => {
-//         registered();
-//       })
-//       .catch((error) => {
-//         alert("Ooooops..Something went wrong!");
-//       });
-//   };
-
-//   const registered = () => {
-//     history.push("/login");
-//   };
-
-//   return (
-//     <form className="Register" onSubmit={performRegister}>
-//       <div>
-//         <input
-//           type="text"
-//           name="firstname"
-//           placeholder="Firstname.."
-//           value={firstName}
-//           onChange={(e) => setFirstName(e.target.value)}
-//           required
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="text"
-//           name="lastname"
-//           placeholder="Lastname.."
-//           value={lastName}
-//           onChange={(e) => setLastName(e.target.value)}
-//           required
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="email"
-//           name="email"
-//           placeholder="Email.."
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//           required
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="password"
-//           name="password"
-//           placeholder="Password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//           required
-//         />
-//       </div>
-//       <div>
-//         <input
-//           type="Password"
-//           name="ConfirmPassword"
-//           placeholder="Confirm Password"
-//           value={passwordConfirmation}
-//           onChange={(e) => setPasswordConfirmation(e.target.value)}
-//           required
-//         />
-//       </div>
-//       <div>
-//         <input type="submit" value="Register" className="sign-up-btn" />
-//       </div>
-//     </form>
-//   );
-// };
-// export default Register;
-
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import FormikControl from "./FormikControl";
 import "./authentication.css";
 import { useHistory } from "react-router";
 import { register } from "../API";
 import logo from "../assets/logo.png";
 import Button from "@material-ui/core/Button";
+import { TextField, InputAdornment } from "@material-ui/core";
+import PersonIcon from "@material-ui/icons/Person";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import { useState } from "react";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import { IconButton } from "@material-ui/core";
 
 function Register() {
   const history = useHistory();
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
 
   const performRegister = (values) => {
-    // e.preventDefault();
-    // console.log(
-    //   "Form data",
-    //   values.firstName,
-    //   values.lastName,
-    //   values.email,
-    //   values.password,
-    //   values.confirmPassword
-    // );
-
     register(
       values.firstName,
       values.lastName,
@@ -125,19 +37,10 @@ function Register() {
       });
   };
 
-  // const checkToken = (history) => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     history.push(`/login`);
-  //   }
-  // };
   const registered = () => {
     history.push("/login");
   };
 
-  // const registered = () => {
-  //   history.push("/login");
-  // };
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -154,10 +57,6 @@ function Register() {
       .required("Required"),
   });
 
-  // const onSubmit = (values) => {
-  //   console.log("Form data", values);
-  // };
-
   return (
     <Formik
       initialValues={initialValues}
@@ -167,47 +66,146 @@ function Register() {
       {(formik) => {
         return (
           <Form className="form__wrapper">
-            <div className="form__dialog">
+            <div className="form__dialog form__dialog--register">
               <div className="form__header">
                 <div className="form__logo">
                   <img src={logo} alt="" />
                 </div>
-                <h2 className="form__title">Sign Up</h2>
+                <h3 className="form__title">Sign Up</h3>
               </div>
-              <FormikControl
-                control="input"
-                type="text"
+              <TextField
                 placeholder="First Name"
                 name="firstName"
-                className="form__input"
+                label="First Name"
+                className="field"
+                variant="outlined"
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={
+                  formik.touched.firstName && Boolean(formik.errors.firstName)
+                }
+                helperText={formik.touched.firstName && formik.errors.firstName}
+                style={{ width: "80%", color: "grey" }}
+                color="primary"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <PersonIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <FormikControl
-                control="input"
-                type="text"
+
+              <TextField
                 placeholder="Last Name"
                 name="lastName"
-                className="form__input"
+                label="Last Name"
+                variant="outlined"
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={
+                  formik.touched.lastName && Boolean(formik.errors.lastName)
+                }
+                helperText={formik.touched.lastName && formik.errors.lastName}
+                style={{ width: "80%", color: "grey" }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <PersonIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <FormikControl
-                control="input"
-                type="email"
+              <TextField
                 placeholder="E-mail"
                 name="email"
-                className="form__input"
+                label="E-mail"
+                variant="outlined"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+                style={{ width: "80%", color: "grey" }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <MailOutlineIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <FormikControl
-                control="input"
-                type="password"
+              <TextField
                 placeholder="Password"
                 name="password"
-                className="form__input"
+                label="Password"
+                variant="outlined"
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+                error={
+                  formik.touched.password && Boolean(formik.errors.password)
+                }
+                helperText={formik.touched.password && formik.errors.password}
+                type={showPassword ? "text" : "password"}
+                onChange={formik.handleChange}
+                style={{ width: "80%", color: "grey" }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <VpnKeyIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
-              <FormikControl
-                control="input"
-                type="password"
+              <TextField
                 placeholder="Confirm Password"
                 name="passwordConfirmation"
-                className="form__input"
+                label="Confirm Password"
+                variant="outlined"
+                value={formik.values.passwordConfirmation}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                error={
+                  formik.touched.passwordConfirmation &&
+                  Boolean(formik.errors.passwordConfirmation)
+                }
+                helperText={
+                  formik.touched.passwordConfirmation &&
+                  formik.errors.passwordConfirmation
+                }
+                type={showPassword ? "text" : "password"}
+                style={{ width: "80%", color: "grey" }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <VpnKeyIcon color="primary" />
+                    </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
               <div className="register__button">
                 <Button
@@ -216,10 +214,27 @@ function Register() {
                   color="primary"
                   type="submit"
                   disabled={!formik.isValid}
+                  style={{ width: "80%", height: 45 }}
                 >
                   Sign Up{" "}
                 </Button>
               </div>
+              <span className="social__title">Or Log In With</span>
+              <div className="social__buttons">
+                <img
+                  src="https://app.365dropship.com/gmail.285cd2a6d2400e92b9c8.png"
+                  alt=""
+                />
+                <i class="fab fa-facebook-f"></i>
+              </div>
+              <span className="login__info">
+                Already have an account?{" "}
+                <strong>
+                  <a className="login-to-signUp" href="/login">
+                    Sign in
+                  </a>
+                </strong>
+              </span>
             </div>
           </Form>
         );

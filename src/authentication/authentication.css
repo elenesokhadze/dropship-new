@@ -1,60 +1,3 @@
-/* .Register {
-  margin: 20px 40px;
-}
-.Register div {
-  padding: 10px;
-}
-.Register div input {
-  border-color: #61d5df;
-  border-radius: 5px;
-  padding: 10px;
-} */
-
-/* .App {
-  display: flex;
-  justify-content: center;
-} */
-
-.form__label {
-  font-weight: bold;
-  display: flex;
-  margin-bottom: 5px;
-  /* justify-content: flex-start; */
-}
-
-/* .form__control input + label {
-  font-weight: bold;
-  display: inline-flex;
-  margin-right: 20px;
-} */
-
-.form__input {
-  width: 280px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  /* color: #555; */
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 30px;
-  /* margin-bottom: 20px; */
-}
-
-.form__control {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: left !important;
-}
-
-.error {
-  color: red;
-}
-
 .form__wrapper {
   background-image: url("../assets/auth-background.jpg");
   background-position: center;
@@ -72,33 +15,46 @@
 }
 
 .form__dialog {
-  width: min(413px, 95%);
-  height: 576px;
+  width: min(420px, 95%);
   background: #fff;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
   border-radius: 8px;
-  padding: 34px 40px;
+  padding: 30px 0 30px 0;
   z-index: 2;
   box-shadow: 0 0 12px #6b6b6b;
 }
+.form__dialog--register {
+  width: min(460px, 95%);
+}
+.form__dialog--login {
+  height: 480px;
+}
+
 .form__header {
   display: flex;
-  justify-content: space-evenly;
-}
-.form__title {
-  display: flex;
-  justify-content: center;
+  width: 80%;
   align-items: center;
+  flex-direction: row;
+  gap: 95px;
+}
+.form__header--login {
+  gap: 60px;
+}
+
+.form__title {
   font-size: 18px;
   color: #171717;
   text-transform: capitalize;
 }
-
 .form__logo img {
   width: 51px;
   height: 30px;
@@ -108,10 +64,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .login__button {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.login__forgot-password {
+  font-family: SegoeUI;
+  font-size: 14px;
+  color: rgba(59, 59, 59, 0.35);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.social__title {
+  font-family: SegoeUI;
+  font-size: 14px;
+  color: rgba(59, 59, 59, 0.35);
+  text-transform: capitalize;
+  text-align: center;
+  position: relative;
+}
+
+.fa-facebook-f {
+  color: #6485c3;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.social__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  cursor: pointer;
+}
+
+.login-to-signUp {
+  outline: 0;
+  text-decoration: none;
+  cursor: pointer;
+  color: rgba(59, 59, 59, 0.72);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login__info {
+  color: rgba(59, 59, 59, 0.72);
 }

@@ -6,11 +6,6 @@ axios.interceptors.request.use((config) => {
   return config;
 });
 
-axios.interceptors.response.use((config) => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
-  return config;
-});
-
 export const productsAPI = async () => {
   const results = await axios.get(WEB_URL_V1 + "products");
   return results.data.data;
