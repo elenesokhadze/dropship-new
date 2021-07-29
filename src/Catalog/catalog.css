@@ -3,4 +3,11 @@
   margin-left: 360px;
   overflow-y: scroll;
   height: calc(100vh - 138px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1;
 }

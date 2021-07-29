@@ -6,10 +6,13 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { selectOne } from "../redux/products/ProductActions";
 import { removeOne } from "../redux/products/ProductActions";
+import Box from "@material-ui/core/Box";
+import { ButtonGroup } from "@material-ui/core";
 
 const Product = ({ title, price, image, product, id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [style, setStyle] = useState({ opacity: 0, display: "none" });
+  const [count, setCount] = useState(1);
 
   const dispatch = useDispatch();
   const selectedProducts = useSelector(
@@ -25,13 +28,28 @@ const Product = ({ title, price, image, product, id }) => {
     event.stopPropagation();
     setIsOpen(false);
   };
-  const onOpen = () => {
+  const onOpen = (id) => {
+    console.log(id);
     setIsOpen(true);
   };
+
+  const handleIncrement = (event) => {
+    event.stopPropagation();
+    setCount((prev) => prev + 1);
+  };
+
+  const handleDecrement = (event) => {
+    event.stopPropagation();
+    setCount((prev) => {
+      if (prev > 0) return prev - 1;
+      else return prev;
+    });
+  };
+
   return (
     <div
-      className={`catalog__item
-    ${selectedProducts.includes(id) ? "catalog__item--active" : ""}`}
+      className={`product
+    ${selectedProducts.includes(id) ? "product--active" : ""}`}
       onMouseEnter={(e) => {
         setStyle({ opacity: 1, display: "block" });
       }}
@@ -40,8 +58,8 @@ const Product = ({ title, price, image, product, id }) => {
       }}
     >
       <div
-        className={`catalog__hover 
-        ${selectedProducts.includes(id) ? "catalog__hover--active" : ""}`}
+        className={`product__hover 
+        ${selectedProducts.includes(id) ? "product__hover--active" : ""}`}
       >
         <div className="hover__wrapper">
           <label className="checkbox__container">
@@ -57,41 +75,60 @@ const Product = ({ title, price, image, product, id }) => {
           <Button
             variant="contained"
             color="primary"
-            className="catalog__button"
+            className="product__button"
             style={style}
           >
             add to inventory{" "}
           </Button>
         </div>
       </div>
-      <div className="catalog__image">
-        <img src={image} alt="" />
+      <div className="product__wrapper" onClick={onOpen}>
+        <div className="product__image">
+          <img src={image} alt="" />
+        </div>
+        <div className="product__bottom">
+          <div className="product__title--wrapper">
+            <div className="product__title">{title}</div>
+            <div className="product__supplier--wrapper">
+              <div className="product__supplier">
+                <button className="product__button--supplier">
+                  <button className="product__button--supplier product__button--black">
+                    {" "}
+                    By:
+                  </button>{" "}
+                  PL-Supplier149
+                </button>
+                <Box>
+                  <ButtonGroup color="primary">
+                    <Button onClick={handleDecrement}>-</Button>
+                    <Button disabled style={{ color: "grey" }}>
+                      {count}
+                    </Button>
+                    <Button onClick={handleIncrement}>+</Button>
+                  </ButtonGroup>
+                </Box>
+              </div>
+            </div>
+          </div>
+
+          <ul className="product__price">
+            <li className="price__item">
+              <strong>${price}</strong>
+              <span>RRP</span>
+            </li>
+            |
+            <li className="price__item">
+              <strong>${price}</strong>
+              <span>COST</span>
+            </li>
+            |
+            <li className="price__item">
+              <strong className="price__item--blue">${price}</strong>
+              <span>PROFIT</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="catalog__title" onClick={onOpen}>
-        {" "}
-        {title}
-      </div>
-      <div className="catalog__supplier">
-        {" "}
-        BY:{" "}
-        <button className="catalog__button--supplier">PL-Supplier149</button>
-      </div>
-      <ul className="catalog__price" onClick={onOpen}>
-        <li className="price__item">
-          <strong>${price}</strong>
-          <span>RRP</span>
-        </li>
-        |
-        <li className="price__item">
-          <strong>${price}</strong>
-          <span>COST</span>
-        </li>
-        |
-        <li className="price__item">
-          <strong className="price__item--blue">${price}</strong>
-          <span>PROFIT</span>
-        </li>
-      </ul>
       <Modal product={product} isOpen={isOpen} onClose={onClose}></Modal>
     </div>
   );
