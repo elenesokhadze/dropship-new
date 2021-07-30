@@ -3,7 +3,7 @@
   z-index: 1000;
   background-color: #f8f9fa;
   width: 83%;
-  margin-left: 340px;
+  margin-left: 320px;
 }
 
 .header__container {
@@ -22,9 +22,16 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  font-size: 12px !important;
+  color: #29304b;
 }
 
 .clear {
   display: none;
   color: #fff;
+}
+
+.header__text {
+  border-left: 1px solid #dbdcdd;
+  padding: 5px;
 }

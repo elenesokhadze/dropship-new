@@ -31,11 +31,18 @@ const Search = () => {
         </button>
       </form>
 
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        style={{ width: "160px", height: "40px", fontSize: "12px" }}
+      >
         ADD TO INVENTORY
       </Button>
       <div className="FAQ__wrapper">
-        <HelpOutlineIcon className="FAQ" />
+        <HelpOutlineIcon
+          className="FAQ"
+          style={{ width: "28px", height: "28px" }}
+        />
       </div>
     </div>
   );

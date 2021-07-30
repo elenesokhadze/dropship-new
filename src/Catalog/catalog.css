@@ -1,6 +1,6 @@
 .catalog {
   margin-top: 140px;
-  margin-left: 360px;
+  margin-left: 330px;
   overflow-y: scroll;
   height: calc(100vh - 138px);
   display: flex;

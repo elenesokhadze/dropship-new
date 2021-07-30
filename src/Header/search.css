@@ -7,7 +7,7 @@
 .searchButton {
   background-repeat: no-repeat;
   background-size: cover;
-  transform: translateX(-96%);
+  transform: translateX(-45%);
   border: solid 2px #ecedf5;
   border-left: none;
   background-color: #fff;
@@ -25,8 +25,8 @@
 }
 .header__input input {
   border: solid 2px #ecedf5;
-  height: 40px;
-  width: 426px;
+  height: 33px;
+  width: 450px;
   padding-left: 3%;
   border-radius: 12px;
 }
@@ -42,7 +42,7 @@
 
 .FAQ {
   font-family: Gilroy-Bold;
-  font-size: 22px;
+  font-size: 26px;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;

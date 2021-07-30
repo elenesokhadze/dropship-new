@@ -50,7 +50,7 @@ const SliderContainer = () => {
           color="primary"
           size="large"
           onClick={resethandleFilterPrice}
-          style={{ width: "250px" }}
+          style={{ width: "230px", height: "38px" }}
         >
           Reset Filter{" "}
         </Button>

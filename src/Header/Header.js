@@ -30,6 +30,7 @@ const Header = () => {
               variant="contained"
               color="primary"
               onClick={selectAllHandler}
+              style={{ width: "120px", height: "30px" }}
             >
               SELECT ALL
             </Button>
@@ -43,6 +44,7 @@ const Header = () => {
                 variant="contained"
                 color="primary"
                 onClick={clearAllHandler}
+                style={{ height: "30px" }}
               >
                 CLEAR SELECTED{" "}
               </Button>
