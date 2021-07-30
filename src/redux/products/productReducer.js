@@ -57,9 +57,7 @@ const productReducer = (state = initialState, action) => {
     case FILTER_PRODUCTS_BY_PRICE:
       return {
         ...state,
-        products: filterProducts(action.payload.price1, action.payload.price2, [
-          ...state.allProducts,
-        ]),
+        products: action.payload,
       };
     case SELECT_ONE_PRODUCT:
       return {

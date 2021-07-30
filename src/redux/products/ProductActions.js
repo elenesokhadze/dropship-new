@@ -40,10 +40,10 @@ export const searchProducts = (searchTerm) => {
   };
 };
 
-export const filterProducts = (price) => {
+export const filterProducts = (filtered) => {
   return {
     type: FILTER_PRODUCTS_BY_PRICE,
-    payload: price,
+    payload: filtered,
   };
 };
 
