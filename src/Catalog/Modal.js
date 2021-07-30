@@ -24,9 +24,7 @@ const OVERLAY_STYLES = {
   zIndex: 1000,
 };
 
-const Modal = ({ isOpen, children, onClose, product }) => {
-  if (!isOpen) return null;
-
+const Modal = ({ children, onClose, product }) => {
   return ReactDom.createPortal(
     <>
       <div style={OVERLAY_STYLES} />

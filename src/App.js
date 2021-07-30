@@ -4,7 +4,6 @@ import Main from "./Main/Main";
 import LandingPage from "./LandingPage/LandingPage";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
-import User from "./User/User";
 import Menu from "./Menu/Menu";
 
 function App() {
@@ -16,40 +15,43 @@ function App() {
             <Login />
           </Route>
           <Route path="/dropship">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route path="/user">
             <Menu />
-            <User />
           </Route>
-          <Route exact path="/cart">
-            <p>Elene</p>
+          <Route path="/cart">
+            <Menu />
           </Route>
-          <Route path="/product/:productId?">
-            <p>Elene</p>
-          </Route>
-          <Route exact path="/register">
+          <Route path="/register">
             <Register />
           </Route>
           <Route path="/dashboard">
+            <Menu />
             <p>Elene</p>
           </Route>
-          <Route path="/catalog/:param?">
+          <Route path="/catalog/:id?">
             <Main />
           </Route>
           <Route path="/inventory">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route path="/cart">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route path="/orders">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route path="/transactions">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route path="/store">
+            <Menu />
             <p>Elene</p>
           </Route>
           <Route exact path="/">

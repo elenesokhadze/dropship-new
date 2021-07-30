@@ -1,6 +1,5 @@
 import "./product.css";
 import { useState } from "react";
-import Modal from "./Modal.js";
 import Button from "@material-ui/core/Button";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -9,8 +8,7 @@ import { removeOne } from "../redux/products/ProductActions";
 import Box from "@material-ui/core/Box";
 import { ButtonGroup } from "@material-ui/core";
 
-const Product = ({ title, price, image, product, id }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Product = ({ title, price, image, product, id, onOpen }) => {
   const [style, setStyle] = useState({ opacity: 0, display: "none" });
   const [count, setCount] = useState(1);
 
@@ -23,14 +21,6 @@ const Product = ({ title, price, image, product, id }) => {
     if (selectedProducts.includes(id)) {
       dispatch(removeOne(id));
     } else dispatch(selectOne(id));
-  };
-  const onClose = (event) => {
-    event.stopPropagation();
-    setIsOpen(false);
-  };
-  const onOpen = (id) => {
-    console.log(id);
-    setIsOpen(true);
   };
 
   const handleIncrement = (event) => {
@@ -82,7 +72,7 @@ const Product = ({ title, price, image, product, id }) => {
           </Button>
         </div>
       </div>
-      <div className="product__wrapper" onClick={onOpen}>
+      <div className="product__wrapper" onClick={() => onOpen(product.id)}>
         <div className="product__image">
           <img src={image} alt="" />
         </div>
@@ -91,13 +81,13 @@ const Product = ({ title, price, image, product, id }) => {
             <div className="product__title">{title}</div>
             <div className="product__supplier--wrapper">
               <div className="product__supplier">
-                <button className="product__button--supplier">
+                <div className="product__button--supplier">
                   <button className="product__button--supplier product__button--black">
                     {" "}
                     By:
                   </button>{" "}
                   PL-Supplier149
-                </button>
+                </div>
                 <Box>
                   <ButtonGroup color="primary">
                     <Button onClick={handleDecrement}>-</Button>
@@ -129,7 +119,6 @@ const Product = ({ title, price, image, product, id }) => {
           </ul>
         </div>
       </div>
-      <Modal product={product} isOpen={isOpen} onClose={onClose}></Modal>
     </div>
   );
 };
