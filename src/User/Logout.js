@@ -12,12 +12,6 @@ const Logout = () => {
 
   return (
     <>
-      {/* <input
-        className="logout"
-        type="button"
-        value="Sign Out"
-        onClick={performLogout}
-      /> */}
       <Button
         variant="contained"
         color="primary"

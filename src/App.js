@@ -4,6 +4,7 @@ import Main from "./Main/Main";
 import LandingPage from "./LandingPage/LandingPage";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
+import User from "./User/User";
 import Menu from "./Menu/Menu";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           </Route>
           <Route path="/user">
             <Menu />
+            <User />
           </Route>
           <Route path="/cart">
             <Menu />
