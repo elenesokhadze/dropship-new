@@ -1,6 +1,5 @@
 import "./aside.css";
-import RangeSlider from "./RangeSlider";
-import Button from "@material-ui/core/Button";
+import SliderContainer from "./SliderContainer";
 
 const Aside = () => {
   return (
@@ -48,22 +47,7 @@ const Aside = () => {
           </select>
         </div>
       </div>
-      <div className="button__container">
-        <div className="slider">
-          <RangeSlider text="PRICE RANGE" />
-          <RangeSlider text="PROFIT RANGE" />
-        </div>
-        <div className="button">
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            style={{ width: "250px" }}
-          >
-            Reset Filter{" "}
-          </Button>
-        </div>
-      </div>
+      <SliderContainer />
     </div>
   );
 };

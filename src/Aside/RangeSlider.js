@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
-import { useDispatch } from "react-redux";
-import { filterProducts } from "../redux/products/ProductActions";
 
 const useStyles = makeStyles({
   root: {
@@ -14,19 +12,13 @@ function valuetext(value) {
   return `${value}`;
 }
 
-export default function RangeSlider({ text }) {
+export default function RangeSlider({
+  text,
+  handleFilterPrice,
+  value,
+  handleChange,
+}) {
   const classes = useStyles();
-  const [value, setValue] = React.useState([1, 9999]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const dispatch = useDispatch();
-
-  const handleFilterPrice = (value) => {
-    dispatch(filterProducts(value[0], value[1]));
-  };
 
   return (
     <div className={classes.root}>
@@ -37,6 +29,8 @@ export default function RangeSlider({ text }) {
         getAriaValueText={valuetext}
         color="secondary"
         onClick={handleFilterPrice}
+        min={0}
+        max={400}
       />
       <div className="range__container">
         <div className="range range__min">
