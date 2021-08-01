@@ -22,9 +22,9 @@ const CartProduct = ({ image, title, qty, price, removeHandler, id }) => {
     },
   }));
   const count = useSelector((state) => state.counter);
-
   const classes = useStyles();
   const dispatch = useDispatch();
+  const total = price * count;
   return (
     <div className={classes.root}>
       <Paper square elevation={3}>
@@ -61,7 +61,7 @@ const CartProduct = ({ image, title, qty, price, removeHandler, id }) => {
               </Box>
             </div>
           </div>
-          <div className="cart-product__heading--item">150$</div>
+          <div className="cart-product__heading--item">{total}$</div>
           <div className="cart-product__heading--item">
             <div className="card-product__item">
               <DeleteIcon

@@ -1,0 +1,9 @@
+.dashboard {
+  display: flex;
+  width: 97%;
+  height: 100%;
+  margin-left: 3%;
+  background-color: #f8f9fa;
+  align-items: center;
+  justify-content: center;
+}

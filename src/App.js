@@ -1,5 +1,11 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from "./otherComponents/Dashboard/Dashboard";
+import Dropship from "./otherComponents/Dropship/Dropship";
+import Inventory from "./otherComponents/Inventory/Inventory";
+import Orders from "./otherComponents/Orders/Orders";
+import Transactions from "./otherComponents/Transactions/Transactions";
+import Store from "./otherComponents/Store/Store";
 import Main from "./Main/Main";
 import LandingPage from "./LandingPage/LandingPage";
 import Login from "./authentication/Login";
@@ -21,7 +27,7 @@ function App() {
           </Route>
           <Route path="/dropship">
             <Menu />
-            <p>Elene</p>
+            <Dropship />
           </Route>
           <Route path="/user">
             <Menu />
@@ -36,14 +42,14 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Menu />
-            <p>Elene</p>
+            <Dashboard />
           </Route>
           <Route path="/catalog/:id?">
             <Main />
           </Route>
           <Route path="/inventory">
             <Menu />
-            <p>Elene</p>
+            <Inventory />
           </Route>
           <Route path="/cart">
             <Menu />
@@ -51,15 +57,15 @@ function App() {
           </Route>
           <Route path="/orders">
             <Menu />
-            <p>Elene</p>
+            <Orders />{" "}
           </Route>
           <Route path="/transactions">
             <Menu />
-            <p>Elene</p>
+            <Transactions />
           </Route>
           <Route path="/store">
             <Menu />
-            <p>Elene</p>
+            <Store />
           </Route>
         </Switch>
       </Router>
