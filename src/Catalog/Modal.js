@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
-import "./modal.css";
 import CloseIcon from "@material-ui/icons/Close";
+import "./modal.css";
 
 const MODAL_STYLES = {
   position: "fixed",
@@ -74,7 +74,9 @@ const Modal = ({ children, onClose, product }) => {
               <div className="tabs__item">Product Details</div>
               <div className="tabs__item">Shipping Rates</div>
             </div>
-            <div className="modal__details">{product.description}</div>
+            <div className="modal__details">
+              <span>{product.description}</span>
+            </div>
           </div>
         </div>
       </div>

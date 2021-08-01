@@ -8,7 +8,7 @@ const SliderContainer = () => {
   const products = useSelector((state) => state.product.products);
   const allProducts = useSelector((state) => state.product.allProducts);
 
-  const [value, setValue] = React.useState([0, 400]);
+  const [value, setValue] = React.useState([0, 1000]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,7 +24,7 @@ const SliderContainer = () => {
     dispatch(filterProducts(filteredProducts));
   };
   const resethandleFilterPrice = () => {
-    setValue([0, 400]);
+    setValue([0, 1000]);
     dispatch(filterProducts(allProducts));
   };
 

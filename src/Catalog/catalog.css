@@ -1,7 +1,7 @@
 .catalog {
   margin-top: 140px;
   margin-left: 330px;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: calc(100vh - 138px);
   display: flex;
   justify-content: center;

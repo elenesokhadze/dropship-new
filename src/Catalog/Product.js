@@ -1,38 +1,35 @@
-import "./product.css";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Button from "@material-ui/core/Button";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { selectOne } from "../redux/products/ProductActions";
-import { removeOne } from "../redux/products/ProductActions";
 import Box from "@material-ui/core/Box";
 import { ButtonGroup } from "@material-ui/core";
+import "./product.css";
+import { selectOne } from "../redux/products/ProductActions";
+import { removeOne } from "../redux/products/ProductActions";
+import { increment } from "../redux/counter/counterActions";
+import { decrement } from "../redux/counter/counterActions";
+import { addToCart } from "../API";
 
 const Product = ({ title, price, image, product, id, onOpen }) => {
   const [style, setStyle] = useState({ opacity: 0, display: "none" });
-  const [count, setCount] = useState(1);
 
   const dispatch = useDispatch();
   const selectedProducts = useSelector(
     (state) => state.product.selectedProducts
   );
 
+  const count = useSelector((state) => state.counter);
+
   const selectProductHandler = () => {
     if (selectedProducts.includes(id)) {
       dispatch(removeOne(id));
     } else dispatch(selectOne(id));
   };
-
-  const handleIncrement = (event) => {
-    event.stopPropagation();
-    setCount((prev) => prev + 1);
-  };
-
-  const handleDecrement = (event) => {
-    event.stopPropagation();
-    setCount((prev) => {
-      if (prev > 0) return prev - 1;
-      else return prev;
+  const addToInventory = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(id, 1).then(() => {
+      console.log("success");
     });
   };
 
@@ -67,6 +64,7 @@ const Product = ({ title, price, image, product, id, onOpen }) => {
             color="primary"
             className="product__button"
             style={style}
+            onClick={addToInventory}
           >
             add to inventory{" "}
           </Button>
@@ -89,12 +87,27 @@ const Product = ({ title, price, image, product, id, onOpen }) => {
                   PL-Supplier149
                 </div>
                 <Box>
-                  <ButtonGroup color="primary">
-                    <Button onClick={handleDecrement}>-</Button>
+                  <ButtonGroup
+                    onClick={(e) => e.stopPropagation()}
+                    color="primary"
+                  >
+                    <Button
+                      onClick={() => {
+                        dispatch(decrement());
+                      }}
+                    >
+                      -
+                    </Button>
                     <Button disabled style={{ color: "grey" }}>
                       {count}
                     </Button>
-                    <Button onClick={handleIncrement}>+</Button>
+                    <Button
+                      onClick={() => {
+                        dispatch(increment());
+                      }}
+                    >
+                      +
+                    </Button>
                   </ButtonGroup>
                 </Box>
               </div>

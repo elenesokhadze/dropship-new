@@ -6,12 +6,16 @@ import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 import User from "./User/User";
 import Menu from "./Menu/Menu";
+import Cart from "./Cart/Cart";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
           <Route exact path="/login">
             <Login />
           </Route>
@@ -25,6 +29,7 @@ function App() {
           </Route>
           <Route path="/cart">
             <Menu />
+            <Cart />
           </Route>
           <Route path="/register">
             <Register />
@@ -55,9 +60,6 @@ function App() {
           <Route path="/store">
             <Menu />
             <p>Elene</p>
-          </Route>
-          <Route exact path="/">
-            <LandingPage />
           </Route>
         </Switch>
       </Router>

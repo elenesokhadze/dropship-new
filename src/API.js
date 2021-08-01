@@ -22,20 +22,22 @@ export const login = async (email, password) => {
 };
 
 export const register = async (
-  firstname,
-  lastname,
+  firstName,
+  lastName,
   email,
   password,
   passwordConfirmation
 ) => {
   try {
-    await axios.post(WEB_URL + "register", {
-      firstName: firstname,
-      lastName: lastname,
+    const results = await axios.post(WEB_URL + "register", {
+      firstName,
+      lastName,
       email,
       password,
       passwordConfirmation,
     });
+    localStorage.setItem("user", JSON.stringify(results.data.data));
+    localStorage.setItem("token", results.data.data.token);
   } catch (error) {
     throw new Error(error);
   }
@@ -46,10 +48,7 @@ export const cart = async () => {
     const results = await axios.get(WEB_URL_V1 + "cart");
     return results.data.data;
   } catch (error) {
-    if (error.response.status === 401) {
-      localStorage.clear();
-      window.location.href = "/";
-    }
+    throw new Error(error);
   }
 };
 

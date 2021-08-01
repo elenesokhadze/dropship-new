@@ -30,7 +30,7 @@ export default function RangeSlider({
         color="secondary"
         onClick={handleFilterPrice}
         min={0}
-        max={400}
+        max={1000}
       />
       <div className="range__container">
         <div className="range range__min">

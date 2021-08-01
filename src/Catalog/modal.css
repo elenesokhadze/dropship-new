@@ -120,3 +120,7 @@
 .modal__details {
   color: #707070;
 }
+
+.modal__details span {
+  word-wrap: break-word;
+}
