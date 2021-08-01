@@ -11,7 +11,6 @@ const Menu = () => {
         <Link to="/dropship">
           <li className="menu__item">
             <img className="menu__logo" src={logo} alt=""></img>
-            {/* <hr /> */}
           </li>
         </Link>
         <Link to="/user">
