@@ -18,6 +18,7 @@ const Logout = () => {
         onClick={performLogout}
         className="logout"
         type="button"
+        style={{ backgroundColor: "#E6EEFC", color: "#79A6F3" }}
       >
         Sign Out{" "}
       </Button>

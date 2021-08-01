@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import "./search.css";
@@ -38,6 +39,15 @@ const Search = () => {
       >
         ADD TO INVENTORY
       </Button>
+      <Link to="/catalog/add" style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "160px", height: "40px", fontSize: "12px" }}
+        >
+          ADD NEW PRODUCT
+        </Button>
+      </Link>
       <div className="FAQ__wrapper">
         <HelpOutlineIcon
           className="FAQ"

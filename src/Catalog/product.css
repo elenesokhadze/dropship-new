@@ -25,6 +25,7 @@
 .checkbox__container {
   display: block;
   position: relative;
+  margin-left: 30px;
   padding-left: 20px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -124,7 +125,14 @@
 
 .product__button {
   position: absolute !important;
-  margin-left: 155px !important;
+  margin-left: 150px !important;
+}
+
+.delete {
+  position: absolute !important;
+  font-size: 23px;
+  margin-left: 10px;
+  color: #d11a2a;
 }
 .product__button--black {
   color: #000;

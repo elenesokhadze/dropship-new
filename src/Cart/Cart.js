@@ -90,7 +90,7 @@ const Cart = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  className="logout"
+                  className="cart__logout"
                   type="button"
                 >
                   Continue Shopping{" "}
@@ -120,7 +120,7 @@ const Cart = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  className="logout"
+                  className="cart__logout"
                   type="button"
                 >
                   Checkout{" "}

@@ -13,6 +13,7 @@ import Register from "./authentication/Register";
 import User from "./User/User";
 import Menu from "./Menu/Menu";
 import Cart from "./Cart/Cart";
+import AddProductModal from "./ModifyProduct/AddProductModal";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LandingPage />
+          </Route>
+          <Route exact path="/catalog/add">
+            <AddProductModal />
           </Route>
           <Route exact path="/login">
             <Login />

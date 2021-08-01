@@ -5,8 +5,6 @@ import "./catalog.css";
 import { getProducts } from "../redux/products/ProductActions";
 import Product from "./Product";
 import Modal from "./Modal.js";
-// import { usePromiseTracker } from "react-promise-tracker";
-// import { trackPromise } from "react-promise-tracker";
 import Spinner from "./Spinner";
 
 const Catalog = () => {
@@ -19,11 +17,6 @@ const Catalog = () => {
     setTimeout(() => setSpinner(false), 1000);
   }, []);
 
-  // const LoadingIndicator = (props) => {
-  //   const { promiseInProgress } = usePromiseTracker();
-  //   return promiseInProgress && <Spinner />;
-  // };
-
   const onClose = (event) => {
     event.stopPropagation();
     history.push(`/catalog`);
@@ -34,9 +27,7 @@ const Catalog = () => {
   };
 
   useEffect(() => {
-    // trackPromise(
     dispatch(getProducts());
-    // );
   }, [dispatch]);
 
   const product = products.find((item) => item.id == id);
@@ -46,7 +37,6 @@ const Catalog = () => {
   } else {
     return (
       <section className="catalog">
-        {/* <LoadingIndicator /> */}
         {products.map((product) => (
           <Product
             key={product.id}

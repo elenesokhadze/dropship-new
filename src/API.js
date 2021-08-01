@@ -65,17 +65,38 @@ export const removeFromCart = async (id) => {
   }
 };
 
+export const getSingleProduct = async (id) => {
+  try {
+    const res = await axios.get(WEB_URL_V1 + `products/${id}`);
+    return res && res.data.data;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
 export const addProduct = async (data) => {
-  const results = await axios.post(WEB_URL_V1 + "products", data);
-  return results.data.data;
+  try {
+    const res = await axios.post(WEB_URL_V1 + `products`, data);
+    return res.data.data;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
-export const getProduct = async (id) => {
-  const results = await axios.get(WEB_URL_V1 + `products/${id}`);
-  return results.data.data;
+export const editProduct = async (id, data) => {
+  try {
+    const res = await axios.put(WEB_URL_V1 + `products/${id}`, data);
+    return res.data.data;
+  } catch (err) {
+    throw new Error(err);
+  }
 };
 
-export const updateProduct = async (id, data) => {
-  const results = await axios.put(WEB_URL_V1 + `products/${id}`, data);
-  return results.data.data;
+export const removeProduct = async (id) => {
+  try {
+    const res = await axios.delete(WEB_URL_V1 + `products/${id}`);
+    return res.data.data;
+  } catch (err) {
+    throw new Error(err);
+  }
 };

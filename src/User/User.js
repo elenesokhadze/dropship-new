@@ -51,6 +51,7 @@ const User = () => {
                 variant="contained"
                 color="secondary"
                 type="submit"
+                style={{ backgroundColor: "#FFF1F1", color: "#FF9494" }}
               >
                 DEACTIVATE ACCOUNT{" "}
               </Button>

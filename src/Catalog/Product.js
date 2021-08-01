@@ -4,11 +4,14 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import { ButtonGroup } from "@material-ui/core";
 import "./product.css";
-import { selectOne } from "../redux/products/ProductActions";
-import { removeOne } from "../redux/products/ProductActions";
-import { increment } from "../redux/counter/counterActions";
-import { decrement } from "../redux/counter/counterActions";
-import { addToCart } from "../API";
+import {
+  selectOne,
+  getProducts,
+  removeOne,
+} from "../redux/products/ProductActions";
+import { increment, decrement } from "../redux/counter/counterActions";
+import { addToCart, removeProduct } from "../API";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const Product = ({ title, price, image, product, id, onOpen }) => {
   const [style, setStyle] = useState({ opacity: 0, display: "none" });
@@ -31,6 +34,13 @@ const Product = ({ title, price, image, product, id, onOpen }) => {
     addToCart(id, 1).then(() => {
       console.log("success");
     });
+  };
+  const removeProductHandler = () => {
+    removeProduct(id)
+      .then((res) => {
+        dispatch(getProducts());
+      })
+      .catch((err) => {});
   };
 
   return (
@@ -68,6 +78,11 @@ const Product = ({ title, price, image, product, id, onOpen }) => {
           >
             add to inventory{" "}
           </Button>
+          <DeleteIcon
+            style={style}
+            className="delete"
+            onClick={removeProductHandler}
+          />
         </div>
       </div>
       <div className="product__wrapper" onClick={() => onOpen(product.id)}>
